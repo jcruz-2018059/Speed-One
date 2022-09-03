@@ -37,7 +37,7 @@
                         <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=TelefonoProveedor&accion=listar" target="myFrame">Teléfono Proveedor</a>
                     </li>
                     <li class="nav-item active">
-                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="#" target="myFrame">Estado</a>
+                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=Estado&accion=Listar" target="myFrame">Estado</a>
                     </li>
                 </ul>
             </div>

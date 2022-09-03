@@ -18,6 +18,8 @@ import model.Cliente;
 import model.ClienteDAO;
 import model.Empleado;
 import model.EmpleadoDAO;
+import model.Estado;
+import model.EstadoDAO;
 import model.Garantia;
 import model.GarantiaDAO;
 import model.TelefonoProveedor;
@@ -39,6 +41,8 @@ public class Controlador extends HttpServlet {
     ClienteDAO clienteDAO = new ClienteDAO();
     Garantia garantia = new Garantia();
     GarantiaDAO garantiaDAO = new GarantiaDAO();
+    Estado estado = new Estado();
+    EstadoDAO estadoDAO = new EstadoDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -53,43 +57,50 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("empleados", listaEmpleados);
                     break;
             }
-            request.getRequestDispatcher("Empleado.jsp").forward(request, response);   
-        }else if(menu.equals("TelefonoProveedor")){
-            switch(accion){
+            request.getRequestDispatcher("Empleado.jsp").forward(request, response);
+        } else if (menu.equals("TelefonoProveedor")) {
+            switch (accion) {
                 case "listar":
                     List listaTelefonoEmpleado = telefonoDAO.listar();
-                    request.setAttribute("telefonoproveedor",listaTelefonoEmpleado );
+                    request.setAttribute("telefonoproveedor", listaTelefonoEmpleado);
                     break;
             }
-            request.getRequestDispatcher("TelefonoProveedor.jsp").forward(request, response); 
-        
-        }else if(menu.equals("Categoria")){
-            switch(accion){
+            request.getRequestDispatcher("TelefonoProveedor.jsp").forward(request, response);
+
+        } else if (menu.equals("Categoria")) {
+            switch (accion) {
                 case "Listar":
                     List listaCategoria = categoriaDAO.listar();
                     request.setAttribute("categoria", listaCategoria);
                     break;
             }
-            request.getRequestDispatcher("Categoria.jsp").forward(request,response);
-        }else if(menu.equals("Cliente")){
-            switch(accion){
+            request.getRequestDispatcher("Categoria.jsp").forward(request, response);
+        } else if (menu.equals("Cliente")) {
+            switch (accion) {
                 case "Listar":
                     List listaCliente = clienteDAO.listar();
                     request.setAttribute("cliente", listaCliente);
                     break;
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-        }else if(menu.equals("Garantia")){
-            switch(accion){
+        } else if (menu.equals("Garantia")) {
+            switch (accion) {
                 case "Listar":
                     List garantia = garantiaDAO.listar();
                     request.setAttribute("garantias", garantia);
                     break;
             }
             request.getRequestDispatcher("Garantia.jsp").forward(request, response);
+        } else if (menu.equals("Estado")) {
+            switch (accion) {
+                case "Listar":
+                    List listaEstado = estadoDAO.listar();
+                    request.setAttribute("estados", listaEstado);
+                    break;
+            }
+            request.getRequestDispatcher("Estado.jsp").forward(request, response);
         }
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
