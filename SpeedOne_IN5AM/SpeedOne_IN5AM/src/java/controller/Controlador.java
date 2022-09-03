@@ -18,6 +18,8 @@ import model.Cliente;
 import model.ClienteDAO;
 import model.Empleado;
 import model.EmpleadoDAO;
+import model.Garantia;
+import model.GarantiaDAO;
 import model.TelefonoProveedor;
 import model.TelefonoProveedorDAO;
 
@@ -35,6 +37,8 @@ public class Controlador extends HttpServlet {
     CategoriaDAO categoriaDAO = new CategoriaDAO();
     Cliente cliente = new Cliente();
     ClienteDAO clienteDAO = new ClienteDAO();
+    Garantia garantia = new Garantia();
+    GarantiaDAO garantiaDAO = new GarantiaDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -75,6 +79,14 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
+        }else if(menu.equals("Garantia")){
+            switch(accion){
+                case "Listar":
+                    List garantia = garantiaDAO.listar();
+                    request.setAttribute("garantias", garantia);
+                    break;
+            }
+            request.getRequestDispatcher("Garantia.jsp").forward(request, response);
         }
     }
     

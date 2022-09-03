@@ -31,7 +31,7 @@
                         <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Cliente</a>
                     </li>
                     <li class="nav-item active">
-                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="#" target="myFrame">Garantía</a>
+                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=Garantia&accion=Listar" target="myFrame">Garantía</a>
                     </li>
                     <li class="nav-item active">
                         <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=TelefonoProveedor&accion=listar" target="myFrame">Teléfono Proveedor</a>
