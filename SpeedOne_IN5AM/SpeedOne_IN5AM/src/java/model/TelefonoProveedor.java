@@ -3,7 +3,6 @@ package model;
 
 
 public class TelefonoProveedor {
-    
     private int codigoTelefonoProveedor;
     private String telefonoProveedor;
     private String telefonoPersonal;
@@ -40,5 +39,6 @@ public class TelefonoProveedor {
     public void setTelefonoPersonal(String telefonoPersonal) {
         this.telefonoPersonal = telefonoPersonal;
     }
+    
     
 }

@@ -1,8 +1,9 @@
 <%-- 
-    Document   : TelefonoProveedor
-    Created on : 1/09/2022, 08:11:32 PM
+    Document   : newjsp
+    Created on : 2/09/2022, 08:32:36 PM
     Author     : Edgar
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
