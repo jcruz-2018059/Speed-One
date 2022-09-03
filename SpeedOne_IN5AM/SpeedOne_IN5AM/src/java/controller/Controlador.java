@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Categoria;
 import model.CategoriaDAO;
+import model.Cliente;
+import model.ClienteDAO;
 import model.Empleado;
 import model.EmpleadoDAO;
 import model.TelefonoProveedor;
@@ -31,6 +33,8 @@ public class Controlador extends HttpServlet {
     TelefonoProveedorDAO telefonoDAO = new TelefonoProveedorDAO();
     Categoria categoria = new Categoria();
     CategoriaDAO categoriaDAO = new CategoriaDAO();
+    Cliente cliente = new Cliente();
+    ClienteDAO clienteDAO = new ClienteDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -63,6 +67,14 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Categoria.jsp").forward(request,response);
+        }else if(menu.equals("Cliente")){
+            switch(accion){
+                case "Listar":
+                    List listaCliente = clienteDAO.listar();
+                    request.setAttribute("cliente", listaCliente);
+                    break;
+            }
+            request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
     }
     

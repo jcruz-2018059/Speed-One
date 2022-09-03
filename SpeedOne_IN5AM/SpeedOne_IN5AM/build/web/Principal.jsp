@@ -28,7 +28,7 @@
                         <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=Categoria&accion=Listar" target="myFrame">Categoría</a>
                     </li>
                     <li class="nav-item active">
-                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="#" target="myFrame">Cliente</a>
+                        <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Cliente</a>
                     </li>
                     <li class="nav-item active">
                         <a style="border: none; margin-left: 10px " class="btn btn-outline-light" href="#" target="myFrame">Garantía</a>
