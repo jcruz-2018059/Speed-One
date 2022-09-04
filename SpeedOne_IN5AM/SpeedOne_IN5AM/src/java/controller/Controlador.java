@@ -22,6 +22,8 @@ import model.Empleado;
 import model.EmpleadoDAO;
 import model.Estado;
 import model.EstadoDAO;
+import model.FormaDePago;
+import model.FormaDePagoDAO;
 import model.Garantia;
 import model.GarantiaDAO;
 import model.Pedido;
@@ -51,6 +53,8 @@ public class Controlador extends HttpServlet {
     PedidoDAO productoDAO = new PedidoDAO();
     DetallePedidos detallePedidos = new DetallePedidos();
     DetallePedidosDAO detallePedidosDAO = new DetallePedidosDAO();
+    FormaDePago formaDePago = new FormaDePago();
+    FormaDePagoDAO formaDePagoDAO = new FormaDePagoDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -123,7 +127,15 @@ public class Controlador extends HttpServlet {
                         break;
             }
             request.getRequestDispatcher("DetallePedidos.jsp").forward(request, response);
-    }
+        }else if(menu.equals("FormaDePago")){
+            switch(accion){
+                case "Listar":
+                    List listaMetodo = formaDePagoDAO.listar();
+                    request.setAttribute("formaDePago", listaMetodo);
+                    break;
+            }
+            request.getRequestDispatcher("FormaDePago.jsp").forward(request,response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

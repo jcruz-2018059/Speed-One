@@ -55,7 +55,7 @@
                     <a class="dropdown-item" href="Controlador?menu=Pedidos&accion=listar" target="myFrame">Pedido</a>
                     <a class="dropdown-item" href="#" target="myFrame">Producto</a>
                     <a class="dropdown-item" href="Controlador?menu=detallePedidos&accion=Listar" target="myFrame">Detalle Pedidos</a>
-                    <a class="dropdown-item" href="#" target="myFrame">Forma de Pago</a>
+                    <a class="dropdown-item" href="Controlador?menu=FormaDePago&accion=Listar" target="myFrame">Forma de Pago</a>
                     <div class="dropdown-divider"></div>
                     <form>
                         <button class="dropdown-item">Salir </button>
