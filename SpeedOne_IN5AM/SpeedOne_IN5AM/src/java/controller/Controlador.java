@@ -16,6 +16,8 @@ import model.Categoria;
 import model.CategoriaDAO;
 import model.Cliente;
 import model.ClienteDAO;
+import model.DetallePedidos;
+import model.DetallePedidosDAO;
 import model.Empleado;
 import model.EmpleadoDAO;
 import model.Estado;
@@ -47,6 +49,8 @@ public class Controlador extends HttpServlet {
     EstadoDAO estadoDAO = new EstadoDAO();
     Pedido producto = new Pedido();
     PedidoDAO productoDAO = new PedidoDAO();
+    DetallePedidos detallePedidos = new DetallePedidos();
+    DetallePedidosDAO detallePedidosDAO = new DetallePedidosDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -111,7 +115,15 @@ public class Controlador extends HttpServlet {
                 break;
         }
         request.getRequestDispatcher("Pedidos.jsp").forward(request, response);
-        }
+        }else if (menu.equals("detallePedidos")){
+            switch(accion){
+                case "Listar":
+                        List listaDetallePedidos = detallePedidosDAO.listar();
+                        request.setAttribute("detallePedidos", listaDetallePedidos);
+                        break;
+            }
+            request.getRequestDispatcher("DetallePedidos.jsp").forward(request, response);
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
