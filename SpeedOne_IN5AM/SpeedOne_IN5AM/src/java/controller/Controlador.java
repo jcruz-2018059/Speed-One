@@ -22,6 +22,8 @@ import model.Estado;
 import model.EstadoDAO;
 import model.Garantia;
 import model.GarantiaDAO;
+import model.Pedido;
+import model.PedidoDAO;
 import model.TelefonoProveedor;
 import model.TelefonoProveedorDAO;
 
@@ -43,6 +45,8 @@ public class Controlador extends HttpServlet {
     GarantiaDAO garantiaDAO = new GarantiaDAO();
     Estado estado = new Estado();
     EstadoDAO estadoDAO = new EstadoDAO();
+    Pedido producto = new Pedido();
+    PedidoDAO productoDAO = new PedidoDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -99,6 +103,14 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Estado.jsp").forward(request, response);
+        }else if (menu.equals("Pedidos")){
+            switch(accion){
+                case "listar":
+                    List listaProducto = productoDAO.listar();
+                    request.setAttribute("pedidos", listaProducto);
+                break;
+        }
+        request.getRequestDispatcher("Pedidos.jsp").forward(request, response);
         }
     }
 
