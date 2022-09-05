@@ -28,6 +28,8 @@ import model.Garantia;
 import model.GarantiaDAO;
 import model.Pedido;
 import model.PedidoDAO;
+import model.Producto;
+import model.ProductoDAO;
 import model.TelefonoProveedor;
 import model.TelefonoProveedorDAO;
 
@@ -49,13 +51,16 @@ public class Controlador extends HttpServlet {
     GarantiaDAO garantiaDAO = new GarantiaDAO();
     Estado estado = new Estado();
     EstadoDAO estadoDAO = new EstadoDAO();
-    Pedido producto = new Pedido();
-    PedidoDAO productoDAO = new PedidoDAO();
+    Pedido pedido = new Pedido();
+    PedidoDAO pedidoDAO = new PedidoDAO();
     DetallePedidos detallePedidos = new DetallePedidos();
     DetallePedidosDAO detallePedidosDAO = new DetallePedidosDAO();
     FormaDePago formaDePago = new FormaDePago();
     FormaDePagoDAO formaDePagoDAO = new FormaDePagoDAO();
-
+    Producto producto = new Producto();
+    ProductoDAO productoDAO = new ProductoDAO();
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
@@ -114,7 +119,7 @@ public class Controlador extends HttpServlet {
         }else if (menu.equals("Pedidos")){
             switch(accion){
                 case "listar":
-                    List listaProducto = productoDAO.listar();
+                    List listaProducto = pedidoDAO.listar();
                     request.setAttribute("pedidos", listaProducto);
                 break;
         }
@@ -135,7 +140,15 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("FormaDePago.jsp").forward(request,response);
-        }
+        }else if(menu.equals("Producto")){
+              switch(accion){
+                  case "Listar":
+                      List listaProductos = productoDAO.listar();
+                      request.setAttribute("productos", listaProductos);
+                      break;
+              }
+                request.getRequestDispatcher("Producto.jsp").forward(request, response);
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -34,17 +34,16 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>CODIGO DE LA FORMA DE PAGO</td>
+                            <td>COD FORMA DE PAGO</td>
                             <td>FORMA DE PAGO</td>
-                            <td>NUMERO DE PEDIDO</td>
                             <td>ACCIONES</td>   
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="FormaDePago" items="${formadepago}">
+                        <c:forEach var="FormaDePago" items="${formaDePago}">
                             <tr>
-                                <td>${FormaDePago.getCodigoFormaDePago()}</td>
-                                <td>${FormaDePago.getFormaDePago()}</td>
+                                <td>${FormaDePago.getCodigoFormaPago()}</td>
+                                <td>${FormaDePago.getFormaPago()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="">Editar</a>
                                     <a class="btn btn-danger" href="">Eliminar</a>
