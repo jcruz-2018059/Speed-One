@@ -12,7 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pedidos</title>
     </head>
-    <body class="d-flex">
+    <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Pedidos</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -50,26 +51,26 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>NUMERO DE PEDIDO</td>
-                            <td>FECHA DE PEDIDO</td>
-                            <td>TOTAL</td>
-                            <td>FECHA DE ENVIO</td>
-                            <td>CODIGO FORMA PAGO</td>
-                            <td>CODIGO CLIENTE</td>
-                            <td>CODIGO EMPLEADO</td>
-                            <td>ACCIONES</td>   
+                            <th class="text-center text-primary" style="color: #1f52a3">NUMERO DE PEDIDO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">FECHA DE PEDIDO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">TOTAL</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">FECHA DE ENVIO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO FORMA PAGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO CLIENTE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO EMPLEADO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>   
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="pedido" items="${pedidos}">
                             <tr>
-                                <td>${pedido.getNumeroDePedido()}</td>
-                                <td>${pedido.getFechaDePedido()}</td>
-                                <td>${pedido.getTotalDelPedido()}</td>
-                                <td>${pedido.getFechaDeEnvio()}</td>
-                                <td>${pedido.getCodigoFormaPago()}</td>
-                                <td>${pedido.getCodigoCliente()}</td>
-                                <td>${pedido.getCodigoEmpleado()}</td>
+                                <td class="bg-primary" style="color: #fff">${pedido.getNumeroDePedido()}</td>
+                                <td class="text-center">${pedido.getFechaDePedido()}</td>
+                                <td class="text-center">${pedido.getTotalDelPedido()}</td>
+                                <td class="text-center">${pedido.getFechaDeEnvio()}</td>
+                                <td class="text-center">${pedido.getCodigoFormaPago()}</td>
+                                <td class="text-center">${pedido.getCodigoCliente()}</td>
+                                <td class="text-center">${pedido.getCodigoEmpleado()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="">Editar</a>
                                     <a class="btn btn-danger" href="">Eliminar</a>

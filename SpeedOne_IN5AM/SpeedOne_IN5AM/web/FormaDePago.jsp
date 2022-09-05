@@ -12,7 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Metodo De Pago</title>
     </head>
-    <body class="d-flex">
+    <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Foma de pago</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -34,17 +35,17 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>COD FORMA DE PAGO</td>
-                            <td>FORMA DE PAGO</td>
-                            <td>ACCIONES</td>   
+                            <th class="text-center text-primary" style="color: #1f52a3">COD FORMA DE PAGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">FORMA DE PAGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>   
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="FormaDePago" items="${formaDePago}">
                             <tr>
-                                <td>${FormaDePago.getCodigoFormaPago()}</td>
-                                <td>${FormaDePago.getFormaPago()}</td>
-                                <td>
+                                <td class="bg-primary" style="color: #fff">${FormaDePago.getCodigoFormaPago()}</td>
+                                <td class="text-center">${FormaDePago.getFormaPago()}</td>
+                                <td class="text-center">
                                     <a class="btn btn-warning" href="">Editar</a>
                                     <a class="btn btn-danger" href="">Eliminar</a>
                                 </td>

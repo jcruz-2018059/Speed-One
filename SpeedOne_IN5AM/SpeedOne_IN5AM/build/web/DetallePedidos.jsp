@@ -14,6 +14,7 @@
         <title>Pantalla DetallePedidoso</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Detalle Pedidos</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -37,22 +38,23 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>COD</td>
-                            <td>CANTIDAD</td>
-                            <td>PRECIO</td>
-                            <td>NUMERO PEDIDO</td>
-                            <td>CODPRODUCTO</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CANTIDAD</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">PRECIO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">NUMERO PEDIDO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODPRODUCTO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="detallePedidos" items="${detallePedidos}">
                             <tr>
-                            <td>${detallePedidos.getCodigoDetallePedidos()}</td>
-                            <td>${detallePedidos.getCantidad()}</td>
-                            <td>${detallePedidos.getPrecio()}</td>
-                            <td>${detallePedidos.getNumeroDePedido()}</td>
-                            <td>${detallePedidos.getCodigoProducto()}</td>
+                            <td class="bg-primary" style="color: #fff">${detallePedidos.getCodigoDetallePedidos()}</td>
+                            <td class="text-center">${detallePedidos.getCantidad()}</td>
+                            <td class="text-center">${detallePedidos.getPrecio()}</td>
+                            <td class="text-center">${detallePedidos.getNumeroDePedido()}</td>
+                            <td class="text-center">${detallePedidos.getCodigoProducto()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>

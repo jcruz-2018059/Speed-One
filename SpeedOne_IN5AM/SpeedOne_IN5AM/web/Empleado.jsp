@@ -14,6 +14,7 @@
         <title>Empleado</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Empleados</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -51,26 +52,26 @@
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
-                            <td>CODIGO</td>
-                            <td>DPI</td>
-                            <td>NOMBRE</td>
-                            <td>APELLIDO</td>
-                            <td>TELEFONO</td>
-                            <td>ESTADO</td>
-                            <td>USUARIO</td>
-                            <td>ACCIONES</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">DPI</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">APELLIDO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">TELEFONO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ESTADO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">USUARIO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="empleado" items="${empleados}">
                         <tr>
-                            <td>${empleado.getCodigoEmpleado()}</td>
-                            <td>${empleado.getDPIEmpleado()}</td>
-                            <td>${empleado.getNombreEmpleado()}</td>
-                            <td>${empleado.getApellidoEmpleado()}</td>
-                            <td>${empleado.getTelefonoEmpleado()}</td>
-                            <td>${empleado.getEstado()}</td>
-                            <td>${empleado.getUsuario()}</td>
+                            <td class="text-center bg-primary" style="color: #fff">${empleado.getCodigoEmpleado()}</td>
+                            <td class="text-center">${empleado.getDPIEmpleado()}</td>
+                            <td class="text-center">${empleado.getNombreEmpleado()}</td>
+                            <td class="text-center">${empleado.getApellidoEmpleado()}</td>
+                            <td class="text-center">${empleado.getTelefonoEmpleado()}</td>
+                            <td class="text-center">${empleado.getEstado()}</td>
+                            <td class="text-center">${empleado.getUsuario()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>

@@ -14,6 +14,7 @@
         <title>Garantía</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Garantia</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -31,16 +32,16 @@
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
-                            <td>CÓDIGO GARANTÍA:</td>
-                            <td>TIEMPO DE GARANTÍA:</td>
-                            <td>ACCIONES: </td>
+                            <th class="text-center text-primary" style="color: #1f52a3">CÓDIGO GARANTÍA:</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">TIEMPO DE GARANTÍA:</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES: </th>
                         </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="garantia" items="${garantias}">
                             <tr>
-                                <td>${garantia.getCodigoGarantia()}</td>
-                                <td>${garantia.getTiempoGarantia()}</td>
+                                <td class="bg-primary" style="color: #fff">${garantia.getCodigoGarantia()}</td>
+                                <td class="text-center">${garantia.getTiempoGarantia()}</td>
                                 <td>
                                     <a href="" class="btn btn-warning">Editar</a>
                                     <a href="" class="btn btn-danger">Eliminar</a>

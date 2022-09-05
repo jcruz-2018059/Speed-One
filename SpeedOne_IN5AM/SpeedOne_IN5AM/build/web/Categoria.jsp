@@ -14,6 +14,7 @@
         <title>Categoria</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px"> Categorias</h1>
         <div class="d-flex">
             <div class="card col-lg-4">
                 <div class="card-body">
@@ -35,17 +36,17 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>CODIGO</td>
-                            <td>NOMBRE</td>
-                            <td>DESCRIPCION</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">DESCRIPCION</th>
                         </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="categoria" items="${categoria}">
                         <tr>
-                            <td>${categoria.getCodigoCategoria()}</td>
-                            <td>${categoria.getNombreCategoria()}</td>
-                            <td>${categoria.getDescripcion()}</td>
+                            <td class="text-center bg-primary" style="color: #fff">${categoria.getCodigoCategoria()}</td>
+                            <td class="text-center">${categoria.getNombreCategoria()}</td>
+                            <td class="text-center active">${categoria.getDescripcion()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>

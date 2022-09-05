@@ -1,0 +1,75 @@
+@font-face {
+	font-family:Poppins;
+	src: url(Fuentes/Poppins-SemiBold.ttf);
+}
+
+*{
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+	text-transform: none;
+        font-family: sans-serif;
+	text-decoration: none;
+	vertical-align: baseline;
+}
+
+body{
+    background: linear-gradient(to right, #023E7D, #001233 );
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+}
+
+.login{
+    background-color: #ffffff;
+    height: 600px;
+    width: 500px
+     
+}
+
+img{
+    padding-top: 50px
+}
+
+p{
+   margin-bottom: 30px;
+}
+
+.In{
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1px #0466C8;
+    padding: 0 5px;
+    font-size: 18px; 
+    margin-bottom: 30px;
+}
+
+.button{
+    font-family: Poppins;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-color: #0466C8;
+    background: #0466C8;
+    padding: 0.6em 3.5em;
+    margin: auto;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.button:hover{
+    background: #002855;
+    border-color: #002855;
+    transition: all 300ms ease;
+}
+
+h2{
+    font-family: Poppins;
+    color: #002855;
+}

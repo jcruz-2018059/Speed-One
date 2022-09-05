@@ -14,6 +14,7 @@
         <title>Vista Productos</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Productos</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -39,28 +40,28 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>CODIGO</td> 
-                            <td>NOMBRE</td>
-                            <td>STOCK</td>
-                            <td>PRECIO</td>
-                            <td>COD. CATEGORIA</td>
-                            <td>COD. GARANTIA</td>
-                            <td>COD. PROVEEDOR</td>
-                            <td>COD. ESTADO PRODUCTO</td>
-                            <td>ACCIONES</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO</th> 
+                            <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">STOCK</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">PRECIO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD. CATEGORIA</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD. GARANTIA</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD. PROVEEDOR</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD. ESTADO PRODUCTO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                         </tr>
                     </thead> 
                     <tbody>
                     <c:forEach var="producto" items="${productos}">
                         <tr>
-                            <td>${producto.getCodigoProducto()}</td>
-                            <td>${producto.getNombreProducto()}</td>
-                            <td>${producto.getStockProducto()}</td>
-                            <td>${producto.getPrecioProducto()}</td>
-                            <td>${producto.getCodigoCategoria()}</td>
-                            <td>${producto.getCodigoGarantia()}</td>
-                            <td>${producto.getCodigoProveedor()}</td>
-                            <td>${producto.getCodigoEstadoProducto()}</td>
+                            <td class="bg-primary" style="color: #fff">${producto.getCodigoProducto()}</td>
+                            <td class="text-center">${producto.getNombreProducto()}</td>
+                            <td class="text-center">${producto.getStockProducto()}</td>
+                            <td class="text-center">${producto.getPrecioProducto()}</td>
+                            <td class="text-center">${producto.getCodigoCategoria()}</td>
+                            <td class="text-center">${producto.getCodigoGarantia()}</td>
+                            <td class="text-center">${producto.getCodigoProveedor()}</td>
+                            <td class="text-center">${producto.getCodigoEstadoProducto()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>

@@ -14,6 +14,7 @@
         <title>Vista Clientes</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Cliente</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -51,23 +52,23 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <td>Código</td>
-                            <td>Nombres</td>
-                            <td>Apellidos</td>
-                            <td>Dirección</td>
-                            <td>No. de Teléfono</td>
-                            <td>E-mail</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">Código</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">Nombres</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">Apellidos</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">Dirección</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">No. de Teléfono</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">E-mail</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="cliente" items="${cliente}">
                         <tr>
-                            <td>${cliente.getCodigoCliente()}</td>
-                            <td>${cliente.getNombresCliente()}</td>
-                            <td>${cliente.getApellidosCliente()}</td>
-                            <td>${cliente.getDireccionCliente()}</td>
-                            <td>${cliente.getTelefonoPersonal()}</td>
-                            <td>${cliente.getEmailCliente()}</td>
+                            <td class="bg-primary" style="color: #fff">${cliente.getCodigoCliente()}</td>
+                            <td class="text-center">${cliente.getNombresCliente()}</td>
+                            <td class="text-center active">${cliente.getApellidosCliente()}</td>
+                            <td class="text-center">${cliente.getDireccionCliente()}</td>
+                            <td class="text-center active">${cliente.getTelefonoPersonal()}</td>
+                            <td class="text-center">${cliente.getEmailCliente()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>
