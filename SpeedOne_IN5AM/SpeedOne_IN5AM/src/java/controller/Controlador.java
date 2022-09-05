@@ -30,6 +30,8 @@ import model.Pedido;
 import model.PedidoDAO;
 import model.Producto;
 import model.ProductoDAO;
+import model.Proveedor;
+import model.ProveedorDAO;
 import model.TelefonoProveedor;
 import model.TelefonoProveedorDAO;
 
@@ -59,6 +61,8 @@ public class Controlador extends HttpServlet {
     FormaDePagoDAO formaDePagoDAO = new FormaDePagoDAO();
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
+    Proveedor proveedor = new Proveedor();
+    ProveedorDAO proveedorDAO = new ProveedorDAO();
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -148,7 +152,15 @@ public class Controlador extends HttpServlet {
                       break;
               }
                 request.getRequestDispatcher("Producto.jsp").forward(request, response);
-    }
+    }else if (menu.equals("Proveedor")) {
+            switch(accion){
+                case "Listar":
+                    List listaProveedor = proveedorDAO.listar();
+                    request.setAttribute("proveedor",listaProveedor );
+                    break;
+            }
+            request.getRequestDispatcher("Proveedor.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

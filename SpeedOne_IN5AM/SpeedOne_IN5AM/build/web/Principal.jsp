@@ -39,7 +39,7 @@
                         <a style="color: #ffffff" class="nav-link" href="Controlador?menu=Producto&accion=Listar" target="myFrame">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color: #ffffff" class="nav-link" href="#">Proveedor</a>
+                        <a style="color: #ffffff" class="nav-link" href="Controlador?menu=Proveedor&accion=Listar" target="myFrame">Proveedor</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a style="color: #ffffff" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
