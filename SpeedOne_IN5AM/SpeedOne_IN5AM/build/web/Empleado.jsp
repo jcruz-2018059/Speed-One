@@ -36,6 +36,10 @@
                             <input type="text" name="txtTelefonoEm" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>Correo</label>
+                            <input type="text" name="txtCorreoEm" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Estado</label>
                             <input type="text" name="txtEstadoEm" class="form-control">
                         </div>
@@ -57,6 +61,7 @@
                             <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
                             <th class="text-center text-primary" style="color: #1f52a3">APELLIDO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">TELEFONO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CORREO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ESTADO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">USUARIO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
@@ -70,6 +75,7 @@
                             <td class="text-center">${empleado.getNombreEmpleado()}</td>
                             <td class="text-center">${empleado.getApellidoEmpleado()}</td>
                             <td class="text-center">${empleado.getTelefonoEmpleado()}</td>
+                            <td class="text-center">${empleado.getCorreoEmpleado()}</td>
                             <td class="text-center">${empleado.getEstado()}</td>
                             <td class="text-center">${empleado.getUsuario()}</td>
                             <td>

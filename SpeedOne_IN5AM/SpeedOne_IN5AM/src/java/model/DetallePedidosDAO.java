@@ -28,7 +28,7 @@ public class DetallePedidosDAO {
                 DetallePedidos dp = new DetallePedidos();
                 dp.setCodigoDetallePedidos(rs.getInt(1));
                 dp.setCantidad(rs.getString(2));
-                dp.setPrecio(rs.getString(3));
+                dp.setPrecio(rs.getDouble(3));
                 dp.setNumeroDePedido(rs.getInt(4));
                 dp.setCodigoProducto(rs.getInt(5));
                 listaDetallePedidos.add(dp);

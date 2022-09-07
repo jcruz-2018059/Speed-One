@@ -67,7 +67,7 @@
                         <img src="img/Usuario.jpg" alt="" width="100px"/>
                     </a>
                     <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
-                    <a class="dropdown-item" href="#">alumno@kinal.edu.gt</a>
+                    <a class="dropdown-item" href="#">${usuario.getCorreoEmpleado()}</a>
                     <div class="dropdown-divider"></div>
                     <form>
                         <button class="dropdown-item">Salir </button>

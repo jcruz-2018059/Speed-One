@@ -42,7 +42,7 @@
                             <th class="text-center text-primary" style="color: #1f52a3">CANTIDAD</th>
                             <th class="text-center text-primary" style="color: #1f52a3">PRECIO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">NUMERO PEDIDO</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">CODPRODUCTO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">COD. PRODUCTO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                             
                         </tr>

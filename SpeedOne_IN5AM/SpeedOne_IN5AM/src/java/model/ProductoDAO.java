@@ -26,7 +26,7 @@ public class ProductoDAO {
             pro.setCodigoProducto(rs.getInt(1));
             pro.setNombreProducto(rs.getString(2));
             pro.setStockProducto(rs.getInt(3));
-            pro.setPrecioProducto(rs.getInt(4));
+            pro.setPrecioProducto(rs.getDouble(4));
             pro.setCodigoCategoria(rs.getInt(5));
             pro.setCodigoGarantia(rs.getInt(6));
             pro.setCodigoProveedor(rs.getInt(7));

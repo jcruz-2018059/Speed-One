@@ -152,7 +152,7 @@ public class Controlador extends HttpServlet {
                       break;
               }
                 request.getRequestDispatcher("Producto.jsp").forward(request, response);
-    }else if (menu.equals("Proveedor")) {
+        }else if (menu.equals("Proveedor")) {
             switch(accion){
                 case "Listar":
                     List listaProveedor = proveedorDAO.listar();

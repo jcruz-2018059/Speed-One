@@ -5,7 +5,7 @@ package model;
 public class DetallePedidos {
     private int codigoDetallePedidos;
     private String cantidad;
-    private String precio;
+    private Double precio;
     private int numeroDePedido;
     private int codigoProducto;
     
@@ -13,7 +13,7 @@ public class DetallePedidos {
         
     }
 
-    public DetallePedidos(int codigoDetallePedidos, String cantidad, String precio, int numeroDePedido, int codigoProducto) {
+    public DetallePedidos(int codigoDetallePedidos, String cantidad, Double precio, int numeroDePedido, int codigoProducto) {
         this.codigoDetallePedidos = codigoDetallePedidos;
         this.cantidad = cantidad;
         this.precio = precio;
@@ -37,11 +37,11 @@ public class DetallePedidos {
         this.cantidad = cantidad;
     }
 
-    public String getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
@@ -59,9 +59,6 @@ public class DetallePedidos {
 
     public void setCodigoProducto(int codigoProducto) {
         this.codigoProducto = codigoProducto;
-    }
-
-     
-    
+    }  
     
 }

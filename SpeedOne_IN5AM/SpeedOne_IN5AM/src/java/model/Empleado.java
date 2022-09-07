@@ -8,18 +8,20 @@ public class Empleado {
     private String nombreEmpleado;
     private String apellidoEmpleado;
     private String telefonoEmpleado;
+    private String correoEmpleado;
     private String estado;
     private String usuario;
 
     public Empleado() {
     }
 
-    public Empleado(int codigoEmpleado, String DPIEmpleado, String nombreEmpleado, String apellidoEmpleado, String telefonoEmpleado, String estado, String usuario) {
+    public Empleado(int codigoEmpleado, String DPIEmpleado, String nombreEmpleado, String apellidoEmpleado, String telefonoEmpleado, String correoEmpleado, String estado, String usuario) {
         this.codigoEmpleado = codigoEmpleado;
         this.DPIEmpleado = DPIEmpleado;
         this.nombreEmpleado = nombreEmpleado;
         this.apellidoEmpleado = apellidoEmpleado;
         this.telefonoEmpleado = telefonoEmpleado;
+        this.correoEmpleado = correoEmpleado;
         this.estado = estado;
         this.usuario = usuario;
     }
@@ -64,6 +66,14 @@ public class Empleado {
         this.telefonoEmpleado = telefonoEmpleado;
     }
 
+    public String getCorreoEmpleado() {
+        return correoEmpleado;
+    }
+
+    public void setCorreoEmpleado(String correoEmpleado) {
+        this.correoEmpleado = correoEmpleado;
+    }
+
     public String getEstado() {
         return estado;
     }
@@ -79,6 +89,7 @@ public class Empleado {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
     
     
 }

@@ -31,6 +31,7 @@ public class EmpleadoDAO {
                 empleado.setDPIEmpleado(rs.getString("DPIEmpleado"));
                 empleado.setNombreEmpleado(rs.getString("nombreEmpleado"));
                 empleado.setApellidoEmpleado(rs.getString("apellidoEmpleado"));
+                empleado.setCorreoEmpleado(rs.getString("correoEmpleado"));
                 empleado.setUsuario(rs.getString("usuario"));
             }
         } catch (Exception e) {
@@ -55,8 +56,9 @@ public class EmpleadoDAO {
                 em.setNombreEmpleado(rs.getString(3));
                 em.setApellidoEmpleado(rs.getString(4));
                 em.setTelefonoEmpleado(rs.getString(5));
-                em.setEstado(rs.getString(6));
-                em.setUsuario(rs.getString(7));
+                em.setCorreoEmpleado(rs.getString(6));
+                em.setEstado(rs.getString(7));
+                em.setUsuario(rs.getString(8));
                 listaEmpleado.add(em);
             }
         } catch (Exception e) {
