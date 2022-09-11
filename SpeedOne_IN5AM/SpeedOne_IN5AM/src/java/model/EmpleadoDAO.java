@@ -33,6 +33,7 @@ public class EmpleadoDAO {
                 empleado.setApellidoEmpleado(rs.getString("apellidoEmpleado"));
                 empleado.setCorreoEmpleado(rs.getString("correoEmpleado"));
                 empleado.setUsuario(rs.getString("usuario"));
+                empleado.setFoto(rs.getString("foto"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,6 +60,7 @@ public class EmpleadoDAO {
                 em.setCorreoEmpleado(rs.getString(6));
                 em.setEstado(rs.getString(7));
                 em.setUsuario(rs.getString(8));
+                em.setFoto(rs.getString(9));
                 listaEmpleado.add(em);
             }
         } catch (Exception e) {

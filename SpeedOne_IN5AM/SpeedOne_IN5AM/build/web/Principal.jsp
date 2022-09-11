@@ -64,13 +64,13 @@
                 </button>
                 <div class="dropdown-menu text-center" aria-labellebdy="dropdownMenuButton">
                     <a class="dropdown-item" href="#">
-                        <img src="img/Usuario.jpg" alt="" width="100px"/>
+                         <img src="foto/${usuario.getFoto()}" width="60%"/>
                     </a>
                     <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
                     <a class="dropdown-item" href="#">${usuario.getCorreoEmpleado()}</a>
                     <div class="dropdown-divider"></div>
-                    <form>
-                        <button class="dropdown-item">Salir </button>
+                    <form action="Validar" method="POST">
+                        <button name="accion" name="Salir" class="dropdown-item" href="#">Salir</button>
                     </form>
                 </div>
             </div>
