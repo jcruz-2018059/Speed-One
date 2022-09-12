@@ -68,6 +68,7 @@ public class Controlador extends HttpServlet {
     int codCliente;
     int codGarantia;
     int TelefonoProv;
+    int codProveedor;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -285,7 +286,39 @@ public class Controlador extends HttpServlet {
             switch(accion){
                 case "Listar":
                     List listaProveedor = proveedorDAO.listar();
-                    request.setAttribute("proveedor",listaProveedor );
+                    request.setAttribute("proveedores",listaProveedor );
+                    break;
+                case "Agregar":
+                    String nombre = request.getParameter("txtNombreProveedor");
+                    String direccion = request.getParameter("txtDireccionProveedor");
+                    int telefonoProveedor = Integer.parseInt(request.getParameter("txtCodigoTelefonoProveedor"));
+                    proveedor.setNombreProveedor(nombre);
+                    proveedor.setDireccionProveedor(direccion);
+                    proveedor.setCodigoTelefonoProveedor(telefonoProveedor);
+                    proveedorDAO.agregar(proveedor);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codProveedor = Integer.parseInt(request.getParameter("codigoProveedor"));
+                    Proveedor p = proveedorDAO.listarCodigoProveedor(codProveedor);
+                    request.setAttribute("proveedor", p);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String nombreProv = request.getParameter("txtNombreProveedor");
+                    String direccionProv = request.getParameter("txtDireccionProveedor");
+                    int codigoTelefonoProveedorProv = Integer.parseInt(request.getParameter("txtCodigoTelefonoProveedor"));
+                    proveedor.setNombreProveedor(nombreProv);
+                    proveedor.setDireccionProveedor(direccionProv);
+                    proveedor.setCodigoTelefonoProveedor(codigoTelefonoProveedorProv);
+                    proveedor.setCodigoProveedor(codProveedor);
+                    proveedorDAO.actualizar(proveedor);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codProveedor = Integer.parseInt(request.getParameter("codigoProveedor"));
+                    proveedorDAO.eliminar(codProveedor);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Proveedor.jsp").forward(request, response);
