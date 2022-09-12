@@ -14,17 +14,17 @@
         <title>Garantía</title>
     </head>
     <body>
-        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Garantia</h1>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Garantía</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Garantia" method="POST">
                         <div class="form-group">
                             <label>Tiempo de garantía: </label>
-                            <input type="text" name="txtTiempoGarantia" class="form-control">
+                            <input type="text" name="txtTiempoGarantia" class="form-control" value="${garantia.getTiempoGarantia()}" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Editar" class="btn btn-success">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -43,8 +43,8 @@
                                 <td class="bg-primary" style="color: #fff">${garantia.getCodigoGarantia()}</td>
                                 <td class="text-center">${garantia.getTiempoGarantia()}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning">Editar</a>
-                                    <a href="" class="btn btn-danger">Eliminar</a>
+                                    <a href="Controlador?menu=Garantia&accion=Editar&codigoGarantia=${garantia.getCodigoGarantia()}" class="btn btn-warning">Editar</a>
+                                    <a href="Controlador?menu=Garantia&accion=Eliminar&codigoGarantia=${garantia.getCodigoGarantia()}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>

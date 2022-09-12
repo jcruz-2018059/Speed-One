@@ -66,6 +66,7 @@ public class Controlador extends HttpServlet {
     
     int codCategoria;
     int codCliente;
+    int codGarantia;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -178,8 +179,32 @@ public class Controlador extends HttpServlet {
         } else if (menu.equals("Garantia")) {
             switch (accion) {
                 case "Listar":
-                    List garantia = garantiaDAO.listar();
-                    request.setAttribute("garantias", garantia);
+                    List listaGarantia = garantiaDAO.listar();
+                    request.setAttribute("garantias", listaGarantia);
+                    break;
+                case "Agregar":
+                    String tiempo = request.getParameter("txtTiempoGarantia");
+                    garantia.setTiempoGarantia(tiempo);
+                    garantiaDAO.agregar(garantia);
+                    request.getRequestDispatcher("Controlador?menu=Garantia&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codGarantia = Integer.parseInt(request.getParameter("codigoGarantia"));
+                    Garantia gar = garantiaDAO.listarCodigoGarantia(codGarantia);
+                    request.setAttribute("garantia", gar);
+                    request.getRequestDispatcher("Controlador?menu=Garantia&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String tiempoDeGarantia = request.getParameter("txtTiempoGarantia");
+                    garantia.setTiempoGarantia(tiempoDeGarantia);
+                    garantia.setCodigoGarantia(codGarantia);
+                    garantiaDAO.actualizar(garantia);
+                    request.getRequestDispatcher("Controlador?menu=Garantia&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codGarantia = Integer.parseInt(request.getParameter("codigoGarantia"));
+                    garantiaDAO.eliminar(codGarantia);
+                    request.getRequestDispatcher("Controlador?menu=Garantia&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Garantia.jsp").forward(request, response);
