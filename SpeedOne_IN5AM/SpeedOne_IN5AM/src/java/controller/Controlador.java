@@ -65,6 +65,7 @@ public class Controlador extends HttpServlet {
     ProveedorDAO proveedorDAO = new ProveedorDAO();
     
     int codCategoria;
+    int codCliente;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -130,7 +131,47 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "Listar":
                     List listaCliente = clienteDAO.listar();
-                    request.setAttribute("cliente", listaCliente);
+                    request.setAttribute("clientes", listaCliente);
+                    break;
+                case "Agregar":
+                    String nombres = request.getParameter("txtNombresCliente");
+                    String apellidos = request.getParameter("txtApellidosCliente");
+                    String direccion = request.getParameter("txtDireccionCliente");
+                    String telefono = request.getParameter("txtTelefonoPersonal");
+                    String email = request.getParameter("txtEmailCliente");
+                    cliente.setNombresCliente(nombres);
+                    cliente.setApellidosCliente(apellidos);
+                    cliente.setDireccionCliente(direccion);
+                    cliente.setTelefonoPersonal(telefono);
+                    cliente.setEmailCliente(email);
+                    clienteDAO.agregar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codCliente = Integer.parseInt(request.getParameter("codigoCliente"));
+                    Cliente c = clienteDAO.listarCodigoCliente(codCliente);
+                    request.setAttribute("cliente", c);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String nombresCl = request.getParameter("txtNombresCliente");
+                    String apellidosCl = request.getParameter("txtApellidosCliente");
+                    String direccionCl = request.getParameter("txtDireccionCliente");
+                    String telefonoCl = request.getParameter("txtTelefonoPersonal");
+                    String emailCl = request.getParameter("txtEmailCliente");
+                    cliente.setNombresCliente(nombresCl);
+                    cliente.setApellidosCliente(apellidosCl);
+                    cliente.setDireccionCliente(direccionCl);
+                    cliente.setTelefonoPersonal(telefonoCl);
+                    cliente.setEmailCliente(emailCl);
+                    cliente.setCodigoCliente(codCliente);
+                    clienteDAO.actualizar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codCliente = Integer.parseInt(request.getParameter("codigoCliente"));
+                    clienteDAO.eliminar(codCliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);

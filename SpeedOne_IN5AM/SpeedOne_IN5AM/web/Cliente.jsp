@@ -14,34 +14,29 @@
         <title>Vista Clientes</title>
     </head>
     <body>
-        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Cliente</h1>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">
-                            <label>Código: </label>
-                            <input type="number" name="txtCodigoCliente" class="form-control" />
-                        </div>
-                        <div class="form-group">
                             <label>Nombres: </label>
-                            <input type="text" name="txtNombresCliente" class="form-control" />
+                            <input type="text" value="${cliente.getNombresCliente()}" name="txtNombresCliente" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Apellidos: </label>
-                            <input type="text" name="txtApellidosCliente" class="form-control" />
+                            <input type="text" value="${cliente.getApellidosCliente()}" name="txtApellidosCliente" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Dirección: </label>
-                            <input type="text" name="txtDireccionCliente" class="form-control" />
+                            <input type="text" value="${cliente.getDireccionCliente()}" name="txtDireccionCliente" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Teléfono: </label>
-                            <input type="text" name="txtTelefonoPersonal" class="form-control" />
+                            <input type="text" value="${cliente.getTelefonoPersonal()}" name="txtTelefonoPersonal" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>E-mail </label>
-                            <input type="text" name="txtEmailCliente" class="form-control" />
+                            <input type="text" value="${cliente.getEmailCliente()}" name="txtEmailCliente" class="form-control" />
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -52,26 +47,26 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="text-center text-primary" style="color: #1f52a3">Código</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">Nombres</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">Apellidos</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">Dirección</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">No. de Teléfono</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">E-mail</th>
+                            <td>Código</td>
+                            <td>Nombres</td>
+                            <td>Apellidos</td>
+                            <td>Dirección</td>
+                            <td>No. de Teléfono</td>
+                            <td>E-mail</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="cliente" items="${cliente}">
+                        <c:forEach var="cliente" items="${clientes}">
                         <tr>
-                            <td class="bg-primary" style="color: #fff">${cliente.getCodigoCliente()}</td>
-                            <td class="text-center">${cliente.getNombresCliente()}</td>
-                            <td class="text-center active">${cliente.getApellidosCliente()}</td>
-                            <td class="text-center">${cliente.getDireccionCliente()}</td>
-                            <td class="text-center active">${cliente.getTelefonoPersonal()}</td>
-                            <td class="text-center">${cliente.getEmailCliente()}</td>
+                            <td>${cliente.getCodigoCliente()}</td>
+                            <td>${cliente.getNombresCliente()}</td>
+                            <td>${cliente.getApellidosCliente()}</td>
+                            <td>${cliente.getDireccionCliente()}</td>
+                            <td>${cliente.getTelefonoPersonal()}</td>
+                            <td>${cliente.getEmailCliente()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Editar&codigoCliente=${cliente.getCodigoCliente()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&codigoCliente=${cliente.getCodigoCliente()}">Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>
