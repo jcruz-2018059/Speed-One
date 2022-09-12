@@ -67,6 +67,7 @@ public class Controlador extends HttpServlet {
     int codCategoria;
     int codCliente;
     int codGarantia;
+    int TelefonoProv;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -87,7 +88,39 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "listar":
                     List listaTelefonoEmpleado = telefonoDAO.listar();
-                    request.setAttribute("telefonoproveedor", listaTelefonoEmpleado);
+                    request.setAttribute("telefonoproveedores", listaTelefonoEmpleado);
+                    break;
+                                        
+                case "Agregar":
+                    String telefonoPro = request.getParameter("txtTelefonoProveedor");
+                    String telefonoPer = request.getParameter("txtTelefonoPersonal");
+                    telefonoP.setTelefonoProveedor(telefonoPro);
+                    telefonoP.setTelefonoPersonal(telefonoPer);
+                    telefonoDAO.agregar(telefonoP);
+                    request.getRequestDispatcher("Controlador?menu=TelefonoProveedor&accion=listar").forward(request, response);                                    
+                   break;   
+                
+                case "Editar":
+                   TelefonoProv = Integer.parseInt(request.getParameter("codigoTelefonoProveedor"));
+                   TelefonoProveedor T = telefonoDAO.listarCodigoTelefonoProveedor(TelefonoProv);
+                   request.setAttribute("TelefonoProveedor", T);
+                   request.getRequestDispatcher("Controlador?menu=TelefonoProveedor&accion=listar").forward(request, response); 
+                    break;                    
+                
+                case "Actualizar":
+                String TelefonoProveedor = request.getParameter("txtTelefonoProveedor");
+                String TelefonoPersonal = request.getParameter("txtTelefonoPersonal");
+                telefonoP.setTelefonoProveedor(TelefonoProveedor);
+                telefonoP.setTelefonoPersonal(TelefonoPersonal);
+                telefonoP.setCodigoTelefonoProveedor(TelefonoProv);
+                telefonoDAO.actualizar(telefonoP);
+                request.getRequestDispatcher("Controlador?menu=TelefonoProveedor&accion=listar").forward(request, response);
+                    break;
+                    
+                    case "Eliminar":
+                TelefonoProv = Integer.parseInt(request.getParameter("codigoTelefonoProveedor"));
+                telefonoDAO.eliminar(TelefonoProv);
+                request.getRequestDispatcher("Controlador?menu=TelefonoProveedor&accion=listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("TelefonoProveedor.jsp").forward(request, response);
