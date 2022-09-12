@@ -64,6 +64,8 @@ public class Controlador extends HttpServlet {
     Proveedor proveedor = new Proveedor();
     ProveedorDAO proveedorDAO = new ProveedorDAO();
     
+    int codCategoria;
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -92,7 +94,35 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "Listar":
                     List listaCategoria = categoriaDAO.listar();
-                    request.setAttribute("categoria", listaCategoria);
+                    request.setAttribute("categorias", listaCategoria);
+                    break;
+                case "Agregar":
+                    String nombres = request.getParameter("txtNombresCategoria");
+                    String descrip = request.getParameter("txtDescripcion");
+                    categoria.setNombreCategoria(nombres);
+                    categoria.setDescripcionCategoria(descrip);
+                    categoriaDAO.agregar(categoria);
+                    request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codCategoria = Integer.parseInt(request.getParameter("codigoCategoria"));
+                    Categoria ca = categoriaDAO.listarCodigoCategoria(codCategoria);
+                    request.setAttribute("categoria", ca);
+                    request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String nombreCat = request.getParameter("txtNombresCategoria");
+                    String descripCat = request.getParameter("txtDescripcion");
+                    categoria.setNombreCategoria(nombreCat);
+                    categoria.setDescripcionCategoria(descripCat);
+                    categoria.setCodigoCategoria(codCategoria);
+                    categoriaDAO.actualizar(categoria);
+                    request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codCategoria = Integer.parseInt(request.getParameter("codigoCategoria"));
+                    categoriaDAO.elimar(codCategoria);
+                    request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Categoria.jsp").forward(request, response);
