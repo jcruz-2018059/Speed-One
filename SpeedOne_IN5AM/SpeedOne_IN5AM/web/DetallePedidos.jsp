@@ -18,17 +18,26 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=DetallePedidos" method="POST">
+                    <form action="Controlador?menu=detallePedidos" method="POST">
+                        <div class="form-group">
+                           <label>Cantidad</label>
+                           <input type="text" value="${detallePedido.getCantidad()}"  name="txtCantidad" class="form-control"> 
+                       </div>
+                        <div class="form-group">
+                           <label>Precio</label>
+                           <input type="text" value="${detallePedido.getPrecio()}" name="txtPrecio" class="form-control"> 
+                       </div>
                         <div class="form-group">
                            <label>Pedidos</label>
-                           <input type="text" name="txtPedidos" class="form-control"> 
+                           <input type="text" value="${detallePedido.getNumeroDePedido()}" name="txtPedidos" class="form-control"> 
                        </div>
                         <div class="form-group">
                             <labelv>Productos</labelv>
-                            <input type="text" name="txtProductos" class="form-control">
+                            <input type="text" value="${detallePedido.getCodigoProducto()}"  name="txtProductos" class="form-control">
                         </div>
                         
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                         
                     </form>
                    </div>
@@ -48,16 +57,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="detallePedidos" items="${detallePedidos}">
+                        <c:forEach var="detallePedido" items="${detallePedidos}">
                             <tr>
-                            <td class="bg-primary" style="color: #fff">${detallePedidos.getCodigoDetallePedidos()}</td>
-                            <td class="text-center">${detallePedidos.getCantidad()}</td>
-                            <td class="text-center">${detallePedidos.getPrecio()}</td>
-                            <td class="text-center">${detallePedidos.getNumeroDePedido()}</td>
-                            <td class="text-center">${detallePedidos.getCodigoProducto()}</td>
+                            <td class="bg-primary" style="color: #fff">${detallePedido.getCodigoDetallePedidos()}</td>
+                            <td class="text-center">${detallePedido.getCantidad()}</td>
+                            <td class="text-center">${detallePedido.getPrecio()}</td>
+                            <td class="text-center">${detallePedido.getNumeroDePedido()}</td>
+                            <td class="text-center">${detallePedido.getCodigoProducto()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=detallePedidos&accion=Editar&codigoDetallePedidos=${detallePedido.getCodigoDetallePedidos()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=detallePedidos&accion=Eliminar&codigoDetallePedidos=${detallePedido.getCodigoDetallePedidos()}">Eliminar</a>
                             </td>
                         </tr   
                         </c:forEach>

@@ -71,6 +71,9 @@ public class Controlador extends HttpServlet {
     int codProveedor;
     int codProducto;
     int codEstado;
+    
+    int codDetallePedidos;
+    int codnumeroDePedido;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -293,6 +296,46 @@ public class Controlador extends HttpServlet {
                     List listaDetallePedidos = detallePedidosDAO.listar();
                     request.setAttribute("detallePedidos", listaDetallePedidos);
                     break;
+                case "Agregar":   
+                    int cant = Integer.parseInt(request.getParameter("txtCantidad"));
+                    double pre = Double.parseDouble(request.getParameter("txtPrecio"));
+                    int codnum = Integer.parseInt(request.getParameter("txtPedidos"));
+                    int codPro = Integer.parseInt(request.getParameter("txtProductos"));
+                    detallePedidos.setCantidad(cant);
+                    detallePedidos.setPrecio(pre);
+                    detallePedidos.setNumeroDePedido(codnum);
+                    detallePedidos.setCodigoProducto(codPro);
+                    detallePedidosDAO.agregar(detallePedidos);
+                    
+                    request.getRequestDispatcher("Controlador?menu=detallePedidos&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                   // String blockeador = request.getParameter("txtPedidos");
+                   // blockeador
+                    codDetallePedidos = Integer.parseInt(request.getParameter("codigoDetallePedidos"));
+                    DetallePedidos d = detallePedidosDAO.listarCodigoDetallePedidos(codDetallePedidos);
+                    request.setAttribute("detallePedido", d);
+                    request.getRequestDispatcher("Controlador?menu=detallePedidos&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    int cantidadDpd = Integer.parseInt(request.getParameter("txtCantidad"));
+                    double precioDpd = Double.parseDouble(request.getParameter("txtPrecio"));
+                    int codnumDpd = Integer.parseInt(request.getParameter("txtPedidos"));
+                    int codProDpd = Integer.parseInt(request.getParameter("txtProductos"));
+                    detallePedidos.setCantidad(cantidadDpd);
+                    detallePedidos.setPrecio(precioDpd);
+                    detallePedidos.setNumeroDePedido(codnumDpd);
+                    detallePedidos.setCodigoProducto(codProDpd);
+                    detallePedidos.setCodigoDetallePedidos(codDetallePedidos);
+                    detallePedidosDAO.actualizar(detallePedidos);
+                    request.getRequestDispatcher("Controlador?menu=detallePedidos&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codDetallePedidos = Integer.parseInt(request.getParameter("codigoDetallePedidos"));
+                    detallePedidosDAO.Eliminar(codDetallePedidos);
+                    request.getRequestDispatcher("Controlador?menu=detallePedidos&accion=Listar").forward(request, response);
+                    break;
+            
             }
             request.getRequestDispatcher("DetallePedidos.jsp").forward(request, response);
         } else if (menu.equals("FormaDePago")) {
