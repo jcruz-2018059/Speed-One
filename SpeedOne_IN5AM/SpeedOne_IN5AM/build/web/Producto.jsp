@@ -21,15 +21,31 @@
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
                             <label>Nombre:</label>
-                            <input type="text" name="txtNombreProducto" class="form-control">
+                            <input type="text" value="${producto.getNombreProducto()}" name="txtNombreProducto" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Stock:</label>
-                            <input type="text" name="txtStockProducto" class="form-control">
+                            <input type="text" value="${producto.getStockProducto()}" name="txtStockProducto" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Precio:</label>
-                            <input type="text" name="txtPrecioProducto" class="form-control">
+                            <input type="text" value="${producto.getPrecioProducto()}" name="txtPrecioProducto" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cod Categoria:</label>
+                            <input type="text" value="${producto.getCodigoCategoria()}" name="txtCodigoCategoria" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cod Proveedor:</label>
+                            <input type="text" value="${producto.getCodigoProveedor()}" name="txtCodigoProveedor" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cod Garantia:</label>
+                            <input type="text" value="${producto.getCodigoGarantia()}" name="txtCodigoGarantia" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cod Estado Producto:</label>
+                            <input type="text" value="${producto.getCodigoEstadoProducto()}" name="txtCodigoEstadoProducto" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -63,8 +79,8 @@
                             <td class="text-center">${producto.getCodigoProveedor()}</td>
                             <td class="text-center">${producto.getCodigoEstadoProducto()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}">Eliminar</a>
                             </td>
                         </tr>
                     </c:forEach>
