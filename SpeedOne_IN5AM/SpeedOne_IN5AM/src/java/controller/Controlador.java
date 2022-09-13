@@ -76,6 +76,7 @@ public class Controlador extends HttpServlet {
     int codDetallePedidos;
     int codnumeroDePedido;
     int codPedido;
+    int codForma;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -443,7 +444,35 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "Listar":
                     List listaMetodo = formaDePagoDAO.listar();
-                    request.setAttribute("formaDePago", listaMetodo);
+                    request.setAttribute("formaDePagos", listaMetodo);
+                    break;
+                    
+                case "Agregar":
+                    String Mepa = request.getParameter("txtFpagos");
+                    formaDePago.setFormaPago(Mepa);
+                    formaDePagoDAO.agregar(formaDePago);
+                    request.getRequestDispatcher("Controlador?menu=FormaDePago&accion=Listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    codForma = Integer.parseInt(request.getParameter("codigoFormaPago"));
+                    FormaDePago forma = formaDePagoDAO.listarCodigoFormaPago(codForma);
+                    request.setAttribute("FormaDePago", forma);
+                    request.getRequestDispatcher("Controlador?menu=FormaDePago&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String form = request.getParameter("txtFpagos");
+                    formaDePago.setFormaPago(form);
+                    formaDePago.setCodigoFormaPago(codForma);
+                    formaDePagoDAO.actualizar(formaDePago);
+                    request.getRequestDispatcher("Controlador?menu=FormaDePago&accion=Listar").forward(request, response);
+                    break;
+
+                case "Eliminar":
+                    codForma = Integer.parseInt(request.getParameter("codigoFormaPago"));
+                    formaDePagoDAO.Eliminar(codForma);
+                    request.getRequestDispatcher("Controlador?menu=FormaDePago&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("FormaDePago.jsp").forward(request, response);

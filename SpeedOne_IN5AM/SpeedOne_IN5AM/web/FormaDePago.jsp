@@ -18,13 +18,10 @@
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=FormaDePago" method="POST">
+                        
                         <div class="form-group">
-                            <label>Metodo De Pago:</label>
-                            <input type="text" name="txtFormaPago" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Numero De Pedido:</label>
-                            <input type="text" name="txtNumeroDePedido" class="form-control">
+                            <label>Método de Pago:</label>
+                            <input type="text"value="${FormaDePago.getFormaPago()}" name="txtFpagos" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -41,13 +38,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="FormaDePago" items="${formaDePago}">
+                        <c:forEach var="FormaDePago" items="${formaDePagos}">
                             <tr>
                                 <td class="bg-primary" style="color: #fff">${FormaDePago.getCodigoFormaPago()}</td>
                                 <td class="text-center">${FormaDePago.getFormaPago()}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=FormaDePago&accion=Editar&codigoFormaPago=${FormaDePago.getCodigoFormaPago()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=FormaDePago&accion=Eliminar&codigoFormaPago=${FormaDePago.getCodigoFormaPago()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
