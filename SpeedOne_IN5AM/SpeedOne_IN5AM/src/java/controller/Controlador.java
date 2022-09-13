@@ -72,7 +72,7 @@ public class Controlador extends HttpServlet {
     int codProveedor;
     int codProducto;
     int codEstado;
-    
+    int codEmpleado;
     int codDetallePedidos;
     int codnumeroDePedido;
     int codPedido;
@@ -89,6 +89,59 @@ public class Controlador extends HttpServlet {
                     List listaEmpleados = empleadoDAO.listar();
                     request.setAttribute("empleados", listaEmpleados);
                     break;
+                case "Agregar":
+                    String DPI = request.getParameter("txtDPIEm");
+                    String nombres = request.getParameter("txtNombresEm");
+                    String apellidos = request.getParameter("txtApellidosEm");
+                    String telefono = request.getParameter("txtTelefonoEm");
+                    String correo = request.getParameter("txtCorreoEm");
+                    String est = request.getParameter("txtEstadoEm");
+                    String user = request.getParameter("txtUsuarioEm");
+                    String foto = request.getParameter("txtFotoEm");
+                    empleado.setDPIEmpleado(DPI);
+                    empleado.setNombreEmpleado(nombres);
+                    empleado.setApellidoEmpleado(apellidos);
+                    empleado.setTelefonoEmpleado(telefono);
+                    empleado.setCorreoEmpleado(correo);
+                    empleado.setEstado(est);
+                    empleado.setUsuario(user);
+                    empleado.setFoto(foto);
+                    empleadoDAO.agregar(empleado);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                     break;
+                case "Editar":
+                    codEmpleado = Integer.parseInt(request.getParameter("codigoEmpleado"));
+                    Empleado e = empleadoDAO.listarCodigoEmpleado(codEmpleado);
+                    request.setAttribute("empleado", e);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String DPIEmp = request.getParameter("txtDPIEm");
+                    String nombresEmp = request.getParameter("txtNombresEm");
+                    String apellidoEmp = request.getParameter("txtApellidosEm");
+                    String telefonoEmp = request.getParameter("txtTelefonoEm");
+                    String correoEmp = request.getParameter("txtCorreoEm");
+                    String estEmp = request.getParameter("txtEstadoEm");
+                    String userEmp = request.getParameter("txtUsuarioEm");
+                    String fotoEmp = request.getParameter("txtFotoEm");
+                    empleado.setDPIEmpleado(DPIEmp);
+                    empleado.setNombreEmpleado(nombresEmp);
+                    empleado.setApellidoEmpleado(apellidoEmp);
+                    empleado.setTelefonoEmpleado(telefonoEmp);
+                    empleado.setCorreoEmpleado(correoEmp);
+                    empleado.setEstado(estEmp);
+                    empleado.setUsuario(userEmp);
+                    empleado.setFoto(fotoEmp);
+                    empleado.setCodigoEmpleado(codEmpleado);
+                    empleadoDAO.actualizar(empleado);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codEmpleado = Integer.parseInt(request.getParameter("codigoEmpleado"));
+                    empleadoDAO.eliminar(codEmpleado);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    break;
+            
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         } else if (menu.equals("TelefonoProveedor")) {

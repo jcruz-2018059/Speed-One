@@ -16,44 +16,49 @@
     <body>
         <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem "> Empleados</h1>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div class="card col-sm-3">
                 <div class="card-body">
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>DPI</label>
-                            <input type="text" name="txtDPIEm" class="form-control">
+                            <input type="text" value="${empleado.getDPIEmpleado()}" name="txtDPIEm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" name="txtNombresEm" class="form-control">
+                            <input type="text" value="${empleado.getNombreEmpleado()}"name="txtNombresEm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Apellidos</label>
-                            <input type="text" name="txtApellidosEm" class="form-control">
+                            <input type="text" value="${empleado.getApellidoEmpleado()}" name="txtApellidosEm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" name="txtTelefonoEm" class="form-control">
+                            <input type="text" value="${empleado.getTelefonoEmpleado()}" name="txtTelefonoEm" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Correo</label>
-                            <input type="text" name="txtCorreoEm" class="form-control">
+                            <label>Correo Electronico</label>
+                            <input type="text" value="${empleado.getCorreoEmpleado()}" name="txtCorreoEm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" name="txtEstadoEm" class="form-control">
+                            <input type="text" value="${empleado.getEstado()}" name="txtEstadoEm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input type="text" name="txtUsuarioEm" class="form-control">
+                            <input type="text" value="${empleado.getUsuario()}" name="txtUsuarioEm" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <label>Foto</label>
+                            <input type="text" value="${empleado.getFoto()}" name="txtFotoEm" class="form-control" placeholder="Ejemplo: nombreimagen.png">
+                        </div>
+                        
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
-            <div class="col-sm-8">
-                <table class="table table-hover text-center">
+            <div class="col-sm-10">
+                <table class="table table-hover text-center table-responsive">
                     <thead>
                         <tr>
                             <th class="text-center text-primary" style="color: #1f52a3">CODIGO</th>
@@ -64,6 +69,7 @@
                             <th class="text-center text-primary" style="color: #1f52a3">CORREO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ESTADO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">USUARIO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">FOTO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                         </tr>
                     </thead>
@@ -78,9 +84,11 @@
                             <td class="text-center">${empleado.getCorreoEmpleado()}</td>
                             <td class="text-center">${empleado.getEstado()}</td>
                             <td class="text-center">${empleado.getUsuario()}</td>
+                            <td class="text-center">${empleado.getFoto()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning"  href="Controlador?menu=Empleado&accion=Editar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Editar</a>
+                                <a class="btn btn-danger"  href="Controlador?menu=Empleado&accion=Eliminar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Eliminar</a>
+                                
                             </td>                            
                         </tr>
                     </c:forEach>
