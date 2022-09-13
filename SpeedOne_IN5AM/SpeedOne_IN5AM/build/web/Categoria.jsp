@@ -14,17 +14,18 @@
         <title>Categoria</title>
     </head>
     <body>
+        <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Clientes</h1>
         <div class="d-flex">
             <div class="card col-lg-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Categoria" method="POST">
                         <div class="form-group">
                             <label>Nombre:</label>
-                            <input type="text" value="${categoria.getNombreCategoria()}" name="txtNombresCategoria" class="form-control">
+                            <input type="text" value="${categoria.getNombreCategoria()}" name="txtNombresCategoria" class="form-control" placeholder="Nombre" required >
                         </div>
                         <div class="form-group">
-                            <label>Descripcion:</label>
-                            <input type="text" value="${categoria.getDescripcionCategoria()}" name="txtDescripcion" class="form-control">
+                            <label>Descripción:</label>
+                            <input type="text" value="${categoria.getDescripcionCategoria()}" name="txtDescripcion" class="form-control" placeholder="Descripción" required >
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -32,21 +33,22 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover text-center">
                     <thead>
                         <tr>
-                            <td>CODIGO</td>
-                            <td>NOMBRE</td>
-                            <td>DESCRIPCION</td>
+                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">DESCRIPCION</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="categoria" items="${categorias}">
                         <tr>
-                            <td>${categoria.getCodigoCategoria()}</td>
-                            <td>${categoria.getNombreCategoria()}</td>
-                            <td>${categoria.getDescripcionCategoria()}</td>
-                            <td>
+                            <td class="bg-primary" style="color: #fff">${categoria.getCodigoCategoria()}</td>
+                            <td class="text-center">${categoria.getNombreCategoria()}</td>
+                            <td class="text-center">${categoria.getDescripcionCategoria()}</td>
+                            <td class="text-center">
                                 <a class="btn btn-warning" href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar</a>
                             </td>

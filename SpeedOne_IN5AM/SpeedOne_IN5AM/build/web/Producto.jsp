@@ -16,36 +16,36 @@
     <body>
         <h1 style="text-align: center; padding-top: 30px; color: #1f52a3; margin-bottom: 40px; font-size: 3rem ">Productos</h1>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div class="card col-sm-3">
                 <div class="card-body">
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
                             <label>Nombre:</label>
-                            <input type="text" value="${producto.getNombreProducto()}" name="txtNombreProducto" class="form-control">
+                            <input type="text" value="${producto.getNombreProducto()}" name="txtNombreProducto" class="form-control" placeholder="Nombre producto" required>
                         </div>
                         <div class="form-group">
                             <label>Stock:</label>
-                            <input type="text" value="${producto.getStockProducto()}" name="txtStockProducto" class="form-control">
+                            <input type="text" value="${producto.getStockProducto()}" name="txtStockProducto" class="form-control" placeholder="Stock" required>
                         </div>
                         <div class="form-group">
                             <label>Precio:</label>
-                            <input type="text" value="${producto.getPrecioProducto()}" name="txtPrecioProducto" class="form-control">
+                            <input type="text" value="${producto.getPrecioProducto()}" name="txtPrecioProducto" class="form-control" placeholder="Q.00.00" required>
                         </div>
                         <div class="form-group">
                             <label>Cod Categoria:</label>
-                            <input type="text" value="${producto.getCodigoCategoria()}" name="txtCodigoCategoria" class="form-control">
+                            <input type="text" value="${producto.getCodigoCategoria()}" name="txtCodigoCategoria" class="form-control" placeholder="Cod. categoria" required>
                         </div>
                         <div class="form-group">
                             <label>Cod Proveedor:</label>
-                            <input type="text" value="${producto.getCodigoProveedor()}" name="txtCodigoProveedor" class="form-control">
+                            <input type="text" value="${producto.getCodigoProveedor()}" name="txtCodigoProveedor" class="form-control" placeholder="Cod. proveedor" required>
                         </div>
                         <div class="form-group">
                             <label>Cod Garantia:</label>
-                            <input type="text" value="${producto.getCodigoGarantia()}" name="txtCodigoGarantia" class="form-control">
+                            <input type="text" value="${producto.getCodigoGarantia()}" name="txtCodigoGarantia" class="form-control" placeholder="Cod. garantia" required>
                         </div>
                         <div class="form-group">
                             <label>Cod Estado Producto:</label>
-                            <input type="text" value="${producto.getCodigoEstadoProducto()}" name="txtCodigoEstadoProducto" class="form-control">
+                            <input type="text" value="${producto.getCodigoEstadoProducto()}" name="txtCodigoEstadoProducto" class="form-control" placeholder="Cod. estado producto" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">

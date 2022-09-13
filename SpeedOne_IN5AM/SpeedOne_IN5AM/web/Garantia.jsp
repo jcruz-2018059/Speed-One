@@ -21,7 +21,7 @@
                     <form action="Controlador?menu=Garantia" method="POST">
                         <div class="form-group">
                             <label>Tiempo de garantía: </label>
-                            <input type="text" name="txtTiempoGarantia" class="form-control" value="${garantia.getTiempoGarantia()}" required>
+                            <input type="text" name="txtTiempoGarantia" class="form-control" value="${garantia.getTiempoGarantia()}" placeholder="Garantia" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">

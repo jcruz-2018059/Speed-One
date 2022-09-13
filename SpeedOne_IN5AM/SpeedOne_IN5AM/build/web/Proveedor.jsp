@@ -21,15 +21,15 @@
                     <form action="Controlador?menu=Proveedor" method="POST">
                         <div class="form-group">
                             <label>Nombre:</label>
-                            <input type="text" value="${proveedor.getNombreProveedor()}" name="txtNombreProveedor" class="form-control">
+                            <input type="text" value="${proveedor.getNombreProveedor()}" name="txtNombreProveedor" class="form-control" placeholder="Nombre Proveedor" required>
                         </div>
                         <div class="form-group">
                             <label>Dirección:</label>
-                            <input type="text" value="${proveedor.getDireccionProveedor()}" name="txtDireccionProveedor" class="form-control">
+                            <input type="text" value="${proveedor.getDireccionProveedor()}" name="txtDireccionProveedor" class="form-control" placeholder="Dirección" required>
                         </div>
                         <div class="form-group">
                             <label>Teléfono de Proveedor:</label>
-                            <input type="text" value="${proveedor.getCodigoTelefonoProveedor()}" name="txtCodigoTelefonoProveedor" class="form-control">
+                            <input type="text" value="${proveedor.getCodigoTelefonoProveedor()}" name="txtCodigoTelefonoProveedor" class="form-control" placeholder="Teléfono" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -44,6 +44,7 @@
                             <th class="text-center text-primary" style="color: #1f52a3">NOMBRE</th>
                             <th class="text-center text-primary" style="color: #1f52a3">DIRECCIÓN</th>
                             <th class="text-center text-primary" style="color: #1f52a3">TELEFONO DE PROVEEDOR</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>

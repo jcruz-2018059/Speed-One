@@ -21,35 +21,35 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>DPI</label>
-                            <input type="text" value="${empleado.getDPIEmpleado()}" name="txtDPIEm" class="form-control">
+                            <input type="text" value="${empleado.getDPIEmpleado()}" name="txtDPIEm" class="form-control" placeholder="Número DPI" required>
                         </div>
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" value="${empleado.getNombreEmpleado()}"name="txtNombresEm" class="form-control">
+                            <input type="text" value="${empleado.getNombreEmpleado()}"name="txtNombresEm" class="form-control" placeholder="Nombres" required>
                         </div>
                         <div class="form-group">
                             <label>Apellidos</label>
-                            <input type="text" value="${empleado.getApellidoEmpleado()}" name="txtApellidosEm" class="form-control">
+                            <input type="text" value="${empleado.getApellidoEmpleado()}" name="txtApellidosEm" class="form-control" placeholder="Apellidos" required>
                         </div>
                         <div class="form-group">
-                            <label>Telefono</label>
-                            <input type="text" value="${empleado.getTelefonoEmpleado()}" name="txtTelefonoEm" class="form-control">
+                            <label>Teléfono</label>
+                            <input type="text" value="${empleado.getTelefonoEmpleado()}" name="txtTelefonoEm" class="form-control" placeholder="No exceder 8 valores " required >
                         </div>
                         <div class="form-group">
-                            <label>Correo Electronico</label>
-                            <input type="text" value="${empleado.getCorreoEmpleado()}" name="txtCorreoEm" class="form-control">
+                            <label>Correo Electrónico</label>
+                            <input type="text" value="${empleado.getCorreoEmpleado()}" name="txtCorreoEm" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${empleado.getEstado()}" name="txtEstadoEm" class="form-control">
+                            <input type="text" value="${empleado.getEstado()}" name="txtEstadoEm" class="form-control" placeholder="Estado" required>
                         </div>
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input type="text" value="${empleado.getUsuario()}" name="txtUsuarioEm" class="form-control">
+                            <input type="text" value="${empleado.getUsuario()}" name="txtUsuarioEm" class="form-control" placeholder="Nombre Usuario" required>
                         </div>
                         <div class="form-group">
                             <label>Foto</label>
-                            <input type="text" value="${empleado.getFoto()}" name="txtFotoEm" class="form-control" placeholder="Ejemplo: nombreimagen.png">
+                            <input type="text" value="${empleado.getFoto()}" name="txtFotoEm" class="form-control" placeholder="Ejemplo: nombreimagen.png" required>
                         </div>
                         
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">

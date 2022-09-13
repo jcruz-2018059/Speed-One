@@ -21,19 +21,19 @@
                     <form action="Controlador?menu=detallePedidos" method="POST">
                         <div class="form-group">
                            <label>Cantidad</label>
-                           <input type="text" value="${detallePedido.getCantidad()}"  name="txtCantidad" class="form-control"> 
+                           <input type="text" value="${detallePedido.getCantidad()}"  name="txtCantidad" class="form-control" placeholder="Cantidad" required> 
                        </div>
                         <div class="form-group">
                            <label>Precio</label>
-                           <input type="text" value="${detallePedido.getPrecio()}" name="txtPrecio" class="form-control"> 
+                           <input type="text" value="${detallePedido.getPrecio()}" name="txtPrecio" class="form-control" placeholder="Q.00.00" required> 
                        </div>
                         <div class="form-group">
                            <label>Pedidos</label>
-                           <input type="text" value="${detallePedido.getNumeroDePedido()}" name="txtPedidos" class="form-control"> 
+                           <input type="text" value="${detallePedido.getNumeroDePedido()}" name="txtPedidos" class="form-control" placeholder="Codigo de Pedido" required> 
                        </div>
                         <div class="form-group">
                             <labelv>Productos</labelv>
-                            <input type="text" value="${detallePedido.getCodigoProducto()}"  name="txtProductos" class="form-control">
+                            <input type="text" value="${detallePedido.getCodigoProducto()}"  name="txtProductos" class="form-control" placeholder="Codigo Producto" required>
                         </div>
                         
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
@@ -64,7 +64,7 @@
                             <td class="text-center">${detallePedido.getPrecio()}</td>
                             <td class="text-center">${detallePedido.getNumeroDePedido()}</td>
                             <td class="text-center">${detallePedido.getCodigoProducto()}</td>
-                            <td>
+                            <td class="text-center">
                                 <a class="btn btn-warning" href="Controlador?menu=detallePedidos&accion=Editar&codigoDetallePedidos=${detallePedido.getCodigoDetallePedidos()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=detallePedidos&accion=Eliminar&codigoDetallePedidos=${detallePedido.getCodigoDetallePedidos()}">Eliminar</a>
                             </td>

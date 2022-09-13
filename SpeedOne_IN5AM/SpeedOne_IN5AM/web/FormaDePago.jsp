@@ -21,7 +21,7 @@
                         
                         <div class="form-group">
                             <label>Método de Pago:</label>
-                            <input type="text"value="${FormaDePago.getFormaPago()}" name="txtFpagos" class="form-control">
+                            <input type="text"value="${FormaDePago.getFormaPago()}" name="txtFpagos" class="form-control" placeholder="Forma de pago" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">

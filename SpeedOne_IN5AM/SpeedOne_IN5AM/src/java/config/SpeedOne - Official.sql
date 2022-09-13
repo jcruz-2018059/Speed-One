@@ -9,8 +9,10 @@ Create table Empleado(
     nombreEmpleado varchar(200) not null,
     apellidoEmpleado varchar(200) not null,
     telefonoEmpleado varchar(8) not null,
+    correoEmpleado varchar(50) not null,
     estado varchar(1) not null,
     usuario varchar(15) not null,
+    foto varchar(100) not null,
     primary key PK_codigoEmpleado (codigoEmpleado)
 );
 
@@ -87,7 +89,7 @@ Create table Producto(
 	codigoProducto int not null auto_increment,
     nombreProducto varchar(100) not null,
     stockProducto int not null,
-    precioProducto int not null,
+    precioProducto Double not null,
     codigoCategoria int not null,
     codigoProveedor int not null,
     codigoGarantia int not null,
@@ -105,7 +107,7 @@ Create table Producto(
 
 Create table DetallePedidos(
 	codigoDetallePedidos int not null auto_increment,
-    cantidad varchar(100) not null,
+    cantidad int not null,
     precio Double not null,
     numeroDePedido int not null,
     codigoProducto int not null,
@@ -117,18 +119,18 @@ Create table DetallePedidos(
 );
 
 
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('1534235565422', 'Fernando', 'Alegria', '54879632','1', 'falegria');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('2313545645778', 'Selvin', 'Chuquiej', '43210509','1', 'schuquiej');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('1244257668800', 'Alejandro', 'Ceballos', '24587963','1', 'jceballos');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('3451356877977', 'Cesar', 'de León', '32157235','1', 'cdeleon');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('9776452356775', 'Julio', 'Farnés', '76123421','1', 'jfarnes');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('1234426664233', 'Eduardo ','Cruz', '89235431','1', 'ecruz');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('5756734668769', 'Pablo', ' Garcia', '54278100','1', 'pgarcia');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('5442656863222', 'Edgar', ' Batzin', '98236129','1', 'ebatzin');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('8754635243555', 'José', ' Chiquin', '22315627','1', 'jchiquin');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('0878452354666', 'Luis', ' Andrade', '93263510','1', 'landrade');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('1089566345465', 'Javier', ' Cruz', '15278934','1', 'jcruz');
-insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, estado, usuario) values ('1332542333335', 'Henry', ' Espinoza', '122344','1', 'jhespinoza');
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('123', 'Fernando', 'Alegria', '54879632','falegria@kinal.gt' ,'1', 'falegria', "fernandoalegria.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('2313545645778', 'Selvin', 'Chuquiej', '43210509','schuquiej@kinal.gt' ,'1', 'schuquiej', "selvinchuquiej.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('1244257668800', 'Alejandro', 'Ceballos', '24587963', 'jceballos@kinal.gt','1', 'jceballos',"alejandroceballos.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('3451356877977', 'Cesar', 'de León', '32157235', 'cdeleon@kinal.gt', '1', 'cdeleon', "cesardeleon.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('9776452356775', 'Julio', 'Farnés', '76123421', 'jfarnes@kinal.gt','1', 'jfarnes',"juliofarnes.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('1234426664233', 'Eduardo ','Cruz', '89235431', 'ecruz@kinal.gt','1', 'ecruz', "eduardocruz.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('5756734668769', 'Pablo', ' Garcia', '54278100', 'pgarcia@kinal.gt','1', 'pgarcia',"pablogarcia.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('5442656863222', 'Edgar', ' Batzin', '98236129', 'ebatzin@kinal.gt','1', 'ebatzin', "edgarbatzin.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('8754635243555', 'José', ' Chiquin', '22315627', 'jchiquin@kinal.gt','1', 'jchiquin',"danielchiquin.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('0878452354666', 'Luis', ' Andrade', '93263510', 'landrade@kinal.gt','1', 'landrade', "luisandrade.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('1089566345465', 'Javier', ' Cruz', '15278934', 'jcruz@kinal.gt','1', 'jcruz', "javiercruz.png");
+insert into Empleado (DPIEmpleado, nombreEmpleado, apellidoEmpleado, telefonoEmpleado, correoEmpleado, estado, usuario, foto) values ('1332542333335', 'Henry', ' Espinoza', '122344', 'hespinoza@kinal.gt','1', 'jhespinoza', "henryespinoza.png");
 
 insert into Categoria (nombreCategoria, descripcionCategoria) values('Reparables','Son reparables');
 insert into Categoria (nombreCategoria, descripcionCategoria) values('Consumibles','No son reparables');
@@ -171,11 +173,11 @@ insert into Pedidos (numeroDePedido, fechaDePedido, totalDelPedido, fechaDeEnvio
 insert into Pedidos (numeroDePedido, fechaDePedido, totalDelPedido, fechaDeEnvio, codigoFormaPago, codigoCliente, codigoEmpleado) values (004,'2022-08-02',1456.00,'2022-08-06', 1, 5, 8);
 insert into Pedidos (numeroDePedido, fechaDePedido, totalDelPedido, fechaDeEnvio, codigoFormaPago, codigoCliente, codigoEmpleado) values (005,'2022-08-24',800.00,'2022-08-28', 3, 4, 9);
 
-insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Radiador',12, 300, 2, 1, 1, 1);
-insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Espejos',20, 250, 1, 3, 2, 1);
-insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Farolas',8, 280, 1, 2, 4, 1);
-insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Filtro de Aire',18, 300, 2, 2, 1, 1);
-insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Frenos',30, 450, 2, 5, 4, 1);
+insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Radiador',12, 300.00, 2, 1, 1, 1);
+insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Espejos',20, 250.00, 1, 3, 2, 1);
+insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Farolas',8, 280.00, 1, 2, 4, 1);
+insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Filtro de Aire',18, 300.00, 2, 2, 1, 1);
+insert into Producto (nombreProducto, stockProducto, precioProducto, codigoCategoria, codigoProveedor, codigoGarantia, codigoEstadoProducto) values ('Frenos',30, 450.00, 2, 5, 4, 1);
 
 insert into DetallePedidos (cantidad, precio, numeroDePedido, codigoProducto) values (1, 300.00, 2, 1);
 insert into DetallePedidos (cantidad, precio, numeroDePedido, codigoProducto) values (3, 250.00, 1, 2);
@@ -183,3 +185,4 @@ insert into DetallePedidos (cantidad, precio, numeroDePedido, codigoProducto) va
 insert into DetallePedidos (cantidad, precio, numeroDePedido, codigoProducto) values (1, 300.00, 5, 4);
 insert into DetallePedidos (cantidad, precio, numeroDePedido, codigoProducto) values (1, 300.00, 4, 1);
 
+Select * from Empleados;

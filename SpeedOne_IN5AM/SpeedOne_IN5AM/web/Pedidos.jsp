@@ -19,32 +19,32 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Pedidos" method="POST">
                         <div class="form-group">
-                            <label>Numero Pedido:</label>
-                            <input type="text" value="${pedido.getNumeroDePedido()}" name="txtNumeroPedido" class="form-control">
+                            <label>Número Pedido:</label>
+                            <input type="text" value="${pedido.getNumeroDePedido()}" name="txtNumeroPedido" class="form-control" placeholder="No. Pedido" required>
                         </div>
                         <div class="form-group">
                             <label>Fecha Pedido:</label>
-                            <input type="text" value="${pedido.getFechaDePedido()}" name="txtFechaPedido" class="form-control">
+                            <input type="text" value="${pedido.getFechaDePedido()}" name="txtFechaPedido" class="form-control" placeholder="Fecha del Pedido" required>
                         </div>
                         <div class="form-group">
                             <label>Total de Pedido:</label>
-                            <input type="text" value="${pedido.getTotalDelPedido()}" name="txtTotalPedido" class="form-control">
+                            <input type="text" value="${pedido.getTotalDelPedido()}" name="txtTotalPedido" class="form-control" placeholder="Q.00.00" required>
                         </div>
                         <div class="form-group">
                             <label>Fecha de Envio:</label>
-                            <input type="text" value="${pedido.getFechaDeEnvio()}" name="txtFechaEnvio" class="form-control">
+                            <input type="text" value="${pedido.getFechaDeEnvio()}" name="txtFechaEnvio" class="form-control" placeholder="Fecha de envio" required>
                         </div>
                         <div class="form-group">
-                            <label>Codigo Forma Pago :</label>
-                            <input type="text" value="${pedido.getCodigoFormaPago()}" name="txtCodigoFormaPago" class="form-control">
+                            <label>Código Forma Pago :</label>
+                            <input type="text" value="${pedido.getCodigoFormaPago()}" name="txtCodigoFormaPago" class="form-control" placeholder="Cod. Forma de pago" required>
                         </div>
                         <div class="form-group">
-                            <label>Codigo Cliente:</label>
-                            <input type="text" value="${pedido.getCodigoCliente()}" name="txtCodigoCliente" class="form-control">
+                            <label>Código Cliente:</label>
+                            <input type="text" value="${pedido.getCodigoCliente()}" name="txtCodigoCliente" class="form-control" placeholder="Cod. Cliente" required>
                         </div>
                         <div class="form-group">
-                            <label>Codigo Empleado:</label>
-                            <input type="text" value="${pedido.getCodigoEmpleado()}" name="txtCodigoEmpleado" class="form-control">
+                            <label>Código Empleado:</label>
+                            <input type="text" value="${pedido.getCodigoEmpleado()}" name="txtCodigoEmpleado" class="form-control" placeholder="Cod Empleado" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -55,13 +55,13 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="text-center text-primary" style="color: #1f52a3">NUMERO DE PEDIDO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">NÚMERO DE PEDIDO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">FECHA DE PEDIDO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">TOTAL</td>
                             <th class="text-center text-primary" style="color: #1f52a3">FECHA DE ENVIO</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO FORMA PAGO</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO CLIENTE</th>
-                            <th class="text-center text-primary" style="color: #1f52a3">CODIGO EMPLEADO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CÓDIGO FORMA PAGO</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CÓDIGO CLIENTE</th>
+                            <th class="text-center text-primary" style="color: #1f52a3">CÓDIGO EMPLEADO</th>
                             <th class="text-center text-primary" style="color: #1f52a3">ACCIONES</th>   
                         </tr>
                     </thead>

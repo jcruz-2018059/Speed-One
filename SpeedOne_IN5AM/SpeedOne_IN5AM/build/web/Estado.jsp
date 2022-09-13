@@ -20,12 +20,8 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Estado" method="POST">
                         <div class="form-group">
-                            <label>Codigo Estado</label>
-                            <input type="text" value="${estado.getCodigoEstadoProducto()}" name="txtCodEs" class="form-control">
-                        </div>
-                        <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${estado.getEstadoProducto()}" name="txtEs" class="form-control">
+                            <input type="text" value="${estado.getEstadoProducto()}" name="txtEs" class="form-control" placeholder="Estado del Producto" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">

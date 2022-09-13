@@ -21,11 +21,11 @@
                     <form action="Controlador?menu=TelefonoProveedor" method="POST">
                         <div class="form-group">
                             <label>Telefono del proveedor:</label>
-                            <input type="text" value="${TelefonoProveedor.getTelefonoProveedor()}" name="txtTelefonoProveedor" class="form-control">
+                            <input type="text" value="${TelefonoProveedor.getTelefonoProveedor()}" name="txtTelefonoProveedor" class="form-control" placeholder="Teléfono principal" required>
                         </div>
                         <div class="form-group">
                             <label>Telefono Personal:</label>
-                            <input type="text" value="${TelefonoProveedor.getTelefonoPersonal()}" name="txtTelefonoPersonal" class="form-control">
+                            <input type="text" value="${TelefonoProveedor.getTelefonoPersonal()}" name="txtTelefonoPersonal" class="form-control" placeholder="Telefono personal" required>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">
