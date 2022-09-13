@@ -6,7 +6,7 @@ import java.sql.Date;
 public class Pedido {
     private int numeroDePedido;
     private Date fechaDePedido;
-    private Double totalDelPedido;
+    private double totalDelPedido;
     private Date fechaDeEnvio;
     private int codigoFormaPago;
     private int codigoCliente;
@@ -15,7 +15,7 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(int numeroDePedido, Date fechaDePedido, Double totalDelPedido, Date fechaDeEnvio, int codigoFormaPago, int codigoCliente, int codigoEmpleado) {
+    public Pedido(int numeroDePedido, Date fechaDePedido, double totalDelPedido, Date fechaDeEnvio, int codigoFormaPago, int codigoCliente, int codigoEmpleado) {
         this.numeroDePedido = numeroDePedido;
         this.fechaDePedido = fechaDePedido;
         this.totalDelPedido = totalDelPedido;
@@ -41,11 +41,11 @@ public class Pedido {
         this.fechaDePedido = fechaDePedido;
     }
 
-    public Double getTotalDelPedido() {
+    public double getTotalDelPedido() {
         return totalDelPedido;
     }
 
-    public void setTotalDelPedido(Double totalDelPedido) {
+    public void setTotalDelPedido(double totalDelPedido) {
         this.totalDelPedido = totalDelPedido;
     }
 
@@ -81,6 +81,3 @@ public class Pedido {
         this.codigoEmpleado = codigoEmpleado;
     }
 }
-
-
-

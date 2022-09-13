@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -74,6 +75,7 @@ public class Controlador extends HttpServlet {
     
     int codDetallePedidos;
     int codnumeroDePedido;
+    int codPedido;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -288,6 +290,52 @@ public class Controlador extends HttpServlet {
                     List listaProducto = pedidoDAO.listar();
                     request.setAttribute("pedidos", listaProducto);
                     break;
+                case "Agregar":
+                    int numPedido = Integer.parseInt(request.getParameter("txtNumeroPedido"));
+                    Date fPedido = Date.valueOf(request.getParameter("txtFechaPedido"));
+                    double totPedido = Double.parseDouble(request.getParameter("txtTotalPedido"));
+                    Date fEnvio = Date.valueOf(request.getParameter("txtFechaEnvio"));
+                    int codFPago = Integer.parseInt(request.getParameter("txtCodigoFormaPago"));
+                    int codCliente = Integer.parseInt(request.getParameter("txtCodigoCliente"));
+                    int codEmpleado = Integer.parseInt(request.getParameter("txtCodigoEmpleado"));
+                    pedido.setNumeroDePedido(numPedido);
+                    pedido.setFechaDePedido(fPedido);
+                    pedido.setTotalDelPedido(totPedido);
+                    pedido.setFechaDeEnvio(fEnvio);
+                    pedido.setCodigoFormaPago(codFPago);
+                    pedido.setCodigoCliente(codCliente);
+                    pedido.setCodigoEmpleado(codEmpleado);
+                    pedidoDAO.agregar(pedido);
+                    request.getRequestDispatcher("Controlador?menu=Pedidos&accion=listar").forward(request, response);
+                break;
+                case "Editar":
+                    codPedido = Integer.parseInt(request.getParameter("numeroDePedido"));
+                    Pedido p = pedidoDAO.listarCodigoPedido(codPedido);
+                    request.setAttribute("pedido", p);
+                    request.getRequestDispatcher("Controlador?menu=Pedidos&accion=listar").forward(request, response);
+                break;
+                case "Actualizar":
+                    Date fecPedido = Date.valueOf(request.getParameter("txtFechaPedido"));
+                    double tPedido = Double.parseDouble(request.getParameter("txtTotalPedido"));
+                    Date fecEnvio = Date.valueOf(request.getParameter("txtFechaEnvio"));
+                    int cFPago = Integer.parseInt(request.getParameter("txtCodigoFormaPago"));
+                    int cCliente = Integer.parseInt(request.getParameter("txtCodigoCliente"));
+                    int cEmpleado = Integer.parseInt(request.getParameter("txtCodigoEmpleado"));
+                    pedido.setFechaDePedido(fecPedido);
+                    pedido.setTotalDelPedido(tPedido);
+                    pedido.setFechaDeEnvio(fecEnvio);
+                    pedido.setCodigoFormaPago(cFPago);
+                    pedido.setCodigoCliente(cCliente);
+                    pedido.setCodigoEmpleado(cEmpleado);
+                    pedido.setNumeroDePedido(codPedido);
+                    pedidoDAO.actualizar(pedido);
+                    request.getRequestDispatcher("Controlador?menu=Pedidos&accion=listar").forward(request, response);
+                break;
+                case "Eliminar":
+                    codPedido = Integer.parseInt(request.getParameter("numeroDePedido"));
+                    pedidoDAO.eliminar(codPedido);
+                    request.getRequestDispatcher("Controlador?menu=Pedidos&accion=listar").forward(request, response);
+                break;
             }
             request.getRequestDispatcher("Pedidos.jsp").forward(request, response);
         } else if (menu.equals("detallePedidos")) {

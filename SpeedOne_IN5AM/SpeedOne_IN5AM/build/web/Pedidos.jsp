@@ -17,30 +17,34 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=Producto" method="POST">
+                    <form action="Controlador?menu=Pedidos" method="POST">
+                        <div class="form-group">
+                            <label>Numero Pedido:</label>
+                            <input type="text" value="${pedido.getNumeroDePedido()}" name="txtNumeroPedido" class="form-control">
+                        </div>
                         <div class="form-group">
                             <label>Fecha Pedido:</label>
-                            <input type="text" name="txtNombreProducto" class="form-control">
+                            <input type="text" value="${pedido.getFechaDePedido()}" name="txtFechaPedido" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Total de Pedido:</label>
-                            <input type="text" name="txtStockProducto" class="form-control">
+                            <input type="text" value="${pedido.getTotalDelPedido()}" name="txtTotalPedido" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Fecha de Envio:</label>
-                            <input type="text" name="txtPrecioProducto" class="form-control">
+                            <input type="text" value="${pedido.getFechaDeEnvio()}" name="txtFechaEnvio" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Codigo Forma Pago :</label>
-                            <input type="text" name="txtCodigoCategoria" class="form-control">
+                            <input type="text" value="${pedido.getCodigoFormaPago()}" name="txtCodigoFormaPago" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Codigo Cliente:</label>
-                            <input type="text" name="txtCodigoCategoria" class="form-control">
+                            <input type="text" value="${pedido.getCodigoCliente()}" name="txtCodigoCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Codigo Empleado:</label>
-                            <input type="text" name="txtCodigoProveedor" class="form-control">
+                            <input type="text" value="${pedido.getCodigoEmpleado()}" name="txtCodigoEmpleado" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -72,8 +76,8 @@
                                 <td class="text-center">${pedido.getCodigoCliente()}</td>
                                 <td class="text-center">${pedido.getCodigoEmpleado()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Pedidos&accion=Editar&numeroDePedido=${pedido.getNumeroDePedido()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=Pedidos&accion=Eliminar&numeroDePedido=${pedido.getNumeroDePedido()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
