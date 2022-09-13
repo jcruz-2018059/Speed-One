@@ -21,14 +21,14 @@
                     <form action="Controlador?menu=Estado" method="POST">
                         <div class="form-group">
                             <label>Codigo Estado</label>
-                            <input type="text" name="txtCodEs" class="form-control">
+                            <input type="text" value="${estado.getCodigoEstadoProducto()}" name="txtCodEs" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" name="txtEs" class="form-control">
+                            <input type="text" value="${estado.getEstadoProducto()}" name="txtEs" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualzar" class="btn btn-success">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -43,20 +43,20 @@
                     </thead>
                     <tbody>
                         <c:forEach var="estado" items="${estados}">
-                        <tr>
-                            <td class="bg-primary" style="color: #fff">${estado.getCodigoEstadoProducto()}</td>
-                            <td class="text-center">${estado.getEstadoProducto()}</td>
-                            <td class="text-center">
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td class="bg-primary" style="color: #fff">${estado.getCodigoEstadoProducto()}</td>
+                                <td class="text-center">${estado.getEstadoProducto()}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-warning" href="Controlador?menu=Estado&accion=Editar&codigoEstadoProducto=${estado.getCodigoEstadoProducto()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=Estado&accion=Eliminar&codigoEstadoProducto=${estado.getCodigoEstadoProducto()}">Eliminar</a>
+                                </td>
+                            </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
         </div>
-        
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
