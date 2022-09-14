@@ -572,8 +572,11 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Proveedor.jsp").forward(request, response);
+        }else if (menu.equals("Carrito")){
+            
         }
-    }
+        request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+    }   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
